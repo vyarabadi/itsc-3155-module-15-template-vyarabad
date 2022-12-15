@@ -13,7 +13,6 @@ def test__get_all_movies(test_app: FlaskClient):
 
     res = test_app.get('/movies')
     page_data: str = res.data
-    #asserts
 
     assert res.status_code== 200 
     assert f'<td><a href="/movies/(test_movie.movie_id)">Dune</a></td>' in page_data

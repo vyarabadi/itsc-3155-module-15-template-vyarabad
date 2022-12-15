@@ -2,7 +2,6 @@ import os
 
 from dotenv import load_dotenv
 from flask import Flask, abort, redirect, render_template, request
-
 from src.models import db
 from src.repositories.movie_repository import movie_repository_singleton
 
