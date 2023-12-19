@@ -49,7 +49,6 @@ def create_movie():
 @app.get('/movies/search')
 def search_movies():
     found_movies = []
-    q = request.args.get('q', '')
-    if q != '':
+    if (q := request.args.get('q', '')) != '':
         found_movies = movie_repository_singleton.search_movies(q)
     return render_template('search_movies.html', search_active=True, movies=found_movies, search_query=q)
